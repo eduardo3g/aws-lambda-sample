@@ -3,7 +3,32 @@ service: aws-serverless-lambda-sample
 provider:
   name: aws
   runtime: nodejs12.x
+  region: sa-east-1
+  memorySize: 256
+  iamRolestatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource:
+        - "arn:aws:s3:::*"
+
 
 functions:
-  hello:
-    handler: handler.hello
+  optimize:
+    handler: optimize.handle
+    environment:
+      bucket: serverless
+    events:
+      - s3:
+          bucket: serverless
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .jpg
+      - s3:
+          bucket: serverless
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .png
