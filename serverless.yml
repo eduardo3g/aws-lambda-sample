@@ -5,7 +5,7 @@ provider:
   runtime: nodejs12.x
   region: sa-east-1
   memorySize: 256
-  iamRolestatements:
+  iamRoleStatements:
     - Effect: Allow
       Action:
         - s3:GetObject
@@ -18,16 +18,16 @@ functions:
   optimize:
     handler: optimize.handle
     environment:
-      bucket: serverless
+      bucket: aws-serverless-nodejs-lambda-sample
     events:
       - s3:
-          bucket: serverless
+          bucket: aws-serverless-nodejs-lambda-sample
           event: s3:ObjectCreated:*
           rules:
             - prefix: uploads/
             - suffix: .jpg
       - s3:
-          bucket: serverless
+          bucket: aws-serverless-nodejs-lambda-sample
           event: s3:ObjectCreated:*
           rules:
             - prefix: uploads/

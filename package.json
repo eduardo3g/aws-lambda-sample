@@ -1,0 +1,26 @@
+{
+  "name": "aws-serverless-lambda-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "optimize.js",
+  "dependencies": {
+    "sharp": "^0.24.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "predeploy": "npm install --arch=x64 --platform=linux --target=8.10.0 sharp",
+    "deploy": "serverless deploy -v",
+    "postdeploy": "rmdir /q /s node_modules/sharp && npm install sharp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardo3g/aws-lambda-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardo3g/aws-lambda-sample/issues"
+  },
+  "homepage": "https://github.com/eduardo3g/aws-lambda-sample#readme"
+}
