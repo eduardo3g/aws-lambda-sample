@@ -11,8 +11,7 @@ on S3 then run a function located on `optimize.js` file.
 
 # What the function does
 
-When the user uploads a <b>.JPG</b> or <b>.PNG</b> image on `uploads/` bucket, the lambda function is triggered to get the image and resize it to a new
-file, that will be placed on `compressed/` bucket.
+Whenever the user uploads a <b>.JPG</b> or <b>.PNG</b> image on `uploads/` bucket, the lambda function is triggered to get the image and resize it to a new file, that will be placed on `compressed/` bucket.
 
 # Setup
 
