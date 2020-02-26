@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  AWS Lamba Function (Serverless)
+  AWS Lamba (Serverless)
 </h1>
 
 This repository contains a simple lamba function to be deployed on AWS. It is responsible to capture events
